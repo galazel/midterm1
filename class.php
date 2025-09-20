@@ -39,12 +39,23 @@ class StudentService
     }
     public function read_students()
     {
-        $students = fread($this->fileOpen, filesize($this->file));
+        $students = [];
+        while (($line = fgets($this->fileOpen)) !== false) {
+            $students[] = trim($line); // trim() removes extra spaces/newlines
+        }
+
+        $this->close_students();
         return $students;
     }
     private function close_students()
     {
         fclose($this->fileOpen);
+    }
+    public function clear_student()
+    {
+        $fileOpen = fopen($this->file, "w");
+        fwrite( $fileOpen,"");
+        $this->close_students();
     }
 }
 ?>
