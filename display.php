@@ -47,9 +47,16 @@
                 ?>
             </div>
 
-            <li>School Id: <?php echo htmlspecialchars($_POST["idNumber"]); ?></li>
-            <li>Name: <?php echo htmlspecialchars($_POST["fullname"]); ?></li>
-            <li>Program: <?php echo htmlspecialchars($_POST["program"]); ?></li>
+            <li>School Id: <?php echo $_POST["idNumber"]; ?></li>
+            <li>Name: <?php echo $_POST["fullname"]; ?></li>
+            <li>Program: <?php echo $_POST["program"]; ?></li>
+            
+            <?php
+                include "class.php"; 
+                $student = new Student($targetPath, $_POST["fullname"], $_POST["idNumber"], $_POST["program"] );
+                $service = new StudentService();
+                $service->save_student($student->get_student());
+            ?>
         </ul>
     </div>
     <div>

@@ -18,7 +18,8 @@
         </div>
         <hr class="text-blue-50 m-5" />
         <div>
-            <form class="flex max-w-md flex-col gap-4" method="post" action="display.php" enctype="multipart/form-data">
+            <form class="flex max-w-md flex-col gap-4" method="post" action="display.php" enctype="multipart/form-data"
+                onsubmit="handleSubmit">
                 <div>
                     <label for="fullname" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
                     <input type="text" id="fullname" name="fullname" placeholder="John Doe" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
@@ -50,14 +51,18 @@
 
                 <div class="flex justify-center">
                     <button type="submit" class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none 
-        focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" onSubmit="handleSubmit(event)">
+        focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                         Register
                     </button>
                 </div>
             </form>
 
         </div>
+        <div class="flex justify-center">
+            <a href="login.php" class="text-green-600 hover:text-red-600 cursor-pointer">Login as Administrator</a>
+        </div>
     </div>
+
     <script>
         const programs = document.getElementById("program")
         const listOfPrograms = [
@@ -82,22 +87,16 @@
             option.innerHTML = element
             programs.appendChild(option)
         });
-        function handleSubmit(e) {
+        const handleSubmit = () => {
             alert("You've successfully registered!")
-            const studentInfo =
-            {
-                profile: document.getElementById("file").value,
-                idNumber: document.getElementById("idNumber").value,
-                program: document.getElementById("program").selectedIndex,
-                program: "select",
+            const fileInput = document.getElementById("file");
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                console.log(file.name);
             }
-            clearAll()
         }
-        function clearAll() {
-            document.getElementById("fullname").value = "";
-            document.getElementById("idNumber").value = "";
-            document.getElementById("program").selectedIndex = 0;
-            document.getElementById("file").value = "";
+        const handleLogin = () => {
+            window.location.href = "login.php"
         }
     </script>
 
