@@ -1,12 +1,10 @@
-import daisyui from "daisyui";
+const daisyui = require("daisyui");
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite-react/**/*.js",
+    "./**/*.php",           // scans all PHP files in your project
+    "./src/**/*.{js,ts,jsx,tsx}" // optional, if you have JS/React
   ],
   theme: {
     extend: {

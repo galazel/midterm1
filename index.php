@@ -4,103 +4,109 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Form</title>
+    <title>UCLM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
 </head>
-
-<body>
-    <div class="bg-white flex flex-col gap-1 p-10 m-10 rounded-xl">
-        <div class="flex flex-col items-center justify-center gap-5">
-            <h1 class="font-bold text-4xl text-center">Registration Form</h1>
-            <p>Fill out the required details below</p>
+<body class = "relative">
+    <div class="absolute inset-0 z-0 bg-black opacity-20"></div>
+    <div class = "flex flex-col gap-5 z-10  items-center p-5 w-[90vw]">
+        <div class="flex flex-col gap-1 items-center border-b-2 mb-5 p-2">
+            <h1 class = "text-[5rem] text-white">UNIVERSITY OF CEBU</h1>
+            <h2 class="text-[1rem] text-white">LAPU-LAPU AND MANDAUE</h2>
         </div>
-        <hr class="text-blue-50 m-5" />
-        <div>
-            <form class="flex max-w-md flex-col gap-4" method="post" action="display.php" enctype="multipart/form-data"
-                onsubmit="handleSubmit">
-                <div>
-                    <label for="fullname" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
-                    <input type="text" id="fullname" name="fullname" placeholder="John Doe" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-        focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                </div>
-
-                <div>
-                    <label for="idNumber" class="block mb-2 text-sm font-medium text-gray-900">ID Number</label>
-                    <input type="text" id="idNumber" name="idNumber" maxlength="8" placeholder="21225368" required
-                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-        focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                </div>
-
-                <div>
-                    <label for="program" class="block mb-2 text-sm font-medium text-gray-900">Select your
-                        program</label>
-                    <select id="program" name="program" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-        focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option selected disabled>Select Program</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="file" class="block mb-2 text-sm font-medium text-gray-900">Profile Picture</label>
-                    <input type="file" id="file" name="file" accept="image/*" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 
-        focus:outline-none file:bg-black file:text-white file:px-4 file:py-2 file:rounded-md file:border-0" />
-                    <p class="mt-1 text-sm text-gray-500">This will be your profile for the rest of the school year</p>
-                </div>
-
-                <div class="flex justify-center">
-                    <button type="submit" class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none 
-        focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                        Register
-                    </button>
-                </div>
-            </form>
-
+        <div class = "grid grid-cols-4 gap-5 mt-5">    
         </div>
-        <div class="flex justify-center">
+        <p class = "text-[2rem] text-white">“Building Minds, Shaping Futures.”</p>
+         <div class="flex justify-center">
             <a href="login.php" class="text-green-600 hover:text-red-600 cursor-pointer">Login as Administrator</a>
         </div>
     </div>
-
     <script>
-        const programs = document.getElementById("program")
-        const listOfPrograms = [
-            "Bachelor of Science in Information Technology",
-            "Bachelor of Science in Computer Science",
-            "Bachelor of Science in Electronics and Communications Engineering",
-            "Bachelor of Science in Information Systems",
-            "Bachelor of Science in Civil Engineering",
-            "Bachelor of Science in Electrical Engineering",
-            "Bachelor of Science in Mechanical Engineering",
-            "Bachelor of Science in Nursing",
-            "Bachelor of Secondary Education",
-            "Bachelor of Elementary Education",
-            "Bachelor of Science in Accountancy",
-            "Bachelor of Science in Business Administration",
-            "Bachelor of Science in Hospitality Management",
-            "Bachelor of Science in Tourism Management"
-        ];
-        listOfPrograms.forEach(element => {
-            const option = document.createElement("option")
-            option.value = element
-            option.innerHTML = element
-            programs.appendChild(option)
-        });
-        const handleSubmit = () => {
-            alert("You've successfully registered!")
-            const fileInput = document.getElementById("file");
-            if (fileInput.files.length > 0) {
-                const file = fileInput.files[0];
-                console.log(file.name);
+        const universityOffers = [
+            {
+                department: "cba.jpg",
+                title: "College of Business",
+                programs: [
+                    "Bachelor of Science in Business Administration",
+                    "Bachelor of Science in Accountancy",
+                    "Bachelor of Science in Hospitality Management",
+                    "Bachelor of Science in Entrepreneurship"
+                ]
+            },
+            {
+                department: "ccs.jpg",
+                title: "College of Computer",
+                programs: [
+                    "Bachelor of Science in Computer Science",
+                    "Bachelor of Science in Information Technology",
+                    "Bachelor of Science in Information Systems",
+                    "Bachelor of Science in Software Engineering"
+                ]
+            },
+            {
+                department: "coe.jpg",
+                title: "College of Engineering",
+                programs: [
+                    "Bachelor of Science in Civil Engineering",
+                    "Bachelor of Science in Mechanical Engineering",
+                    "Bachelor of Science in Electrical Engineering",
+                    "Bachelor of Science in Electronics Engineering"
+                ]
+            },
+            {
+                department: "com.jpg",
+                title: "College of Marine",
+                programs: [
+                    "Bachelor of Science in Marine Engineering",
+                    "Bachelor of Science in Marine Transportation",
+                    "Bachelor of Science in Maritime Safety",
+                    "Bachelor of Science in Naval Architecture"
+                ]
             }
-        }
-        const handleLogin = () => {
-            window.location.href = "login.php"
-        }
+        ];
+
+        const grid = document.querySelector('.grid')
+        universityOffers.forEach(element => 
+        {    
+            const div = document.createElement('div')
+            div.className = 'w-full h-full object-cover relative transition-transform duration-300 ease-in-out hover:scale-105'
+
+            const img = document.createElement('img')
+            img.src = element.department
+            img.alt =  element.title
+            img.className = 'w-full h-full object-cover '
+
+            const title = document.createElement('p')  
+            title.innerHTML = element.title
+            title.className = 'grid content-center justify-center absolute inset-0 opacity-0 hover:opacity-70 hover:bg-black text-white text-3xl p-2 cursor-pointer'
+
+            div.appendChild(img)
+            div.appendChild(title)
+            
+                title.addEventListener('click',async ()=>
+                {  
+                    // fetch('registration.php',
+                    // {
+                    //     method : 'POST',
+                    //      headers: {
+                    //         "Content-Type" : "application/json"
+                    //     },
+                    //     body: JSON.stringify(element.programs) 
+                    // }).then(response => response.text())
+                    // .then(data => console.log(data))
+                    // .catch(error => console.log(error))
+                    // window.location.href = 'registration.php'       
+                    localStorage.setItem('programs',JSON.stringify(element.programs)) 
+                    window.location.href = 'registration.php'                              
+                })
+            grid.appendChild(div)
+
+        });
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
 </body>
-
 </html>

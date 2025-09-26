@@ -2,23 +2,33 @@
 
 class Student
 {
-    private $photo, $fullname, $studentId, $program;
+    private $photo, $fullname, $studentId, $program, $guardianFullname, $guardianAddress, $guardianContact, $studentBirth;
 
-    public function __construct($photo, $fullname, $studentId, $program)
+    public function __construct($photo, $fullname, $studentId, $program, $guardianFullname, $guardianAddress, $guardianContact, $studentBirth)
     {
         $this->photo = $photo;
         $this->fullname = $fullname;
         $this->studentId = $studentId;
         $this->program = $program;
+        $this->guardianFullname = $guardianFullname;
+        $this->guardianAddress = $guardianAddress;
+        $this->guardianContact = $guardianContact;
+        $this->studentBirth = $studentBirth;
+
     }
     public function get_student()
     {
         return "\nName: " . $this->fullname .
             "\nID: " . $this->studentId .
             "\nProgram: " . $this->program .
+            "\nBirthdate: " . $this->studentBirth .
+            "\nGuardian Name: " . $this->guardianFullname .
+            "\nGuardian Address: " . $this->guardianAddress .
+            "\nGuardian Contact: " . $this->guardianContact .
             "\nImage: " . $this->photo .
             "\n";
     }
+
 }
 class StudentService
 {
@@ -41,7 +51,7 @@ class StudentService
     {
         $students = [];
         while (($line = fgets($this->fileOpen)) !== false) {
-            $students[] = trim($line); // trim() removes extra spaces/newlines
+            $students[] = trim($line);
         }
 
         $this->close_students();
@@ -54,8 +64,20 @@ class StudentService
     public function clear_student()
     {
         $fileOpen = fopen($this->file, "w");
-        fwrite( $fileOpen,"");
+        fwrite($fileOpen, "");
         $this->close_students();
+    }
+}
+class Department
+{
+    private $programs;
+    public function __construct($programs)
+    {
+        $this->programs = $programs;
+    }
+    public function getPrograms()
+    {
+        return $this->programs;
     }
 }
 ?>

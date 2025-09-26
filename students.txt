@@ -1,0 +1,18 @@
+
+Name: Haruto Kurosaki
+ID: 42553262
+Program: Bachelor of Science in Naval Architecture
+Birthdate: 2025-09-11
+Guardian Name: Priscilla M. Galagar
+Guardian Address: Ibo Lapu-Lapu City
+Guardian Contact: 25363652445
+Image: uploads/322cabb2-9d5b-4efd-bfec-fb11cf59adf6.jpg
+
+Name: Jake Galagar
+ID: 24225436
+Program: Bachelor of Science in Electrical Engineering
+Birthdate: 2025-09-09
+Guardian Name: Priscilla M. Galagar
+Guardian Address: Ibo Lapu-Lapu City
+Guardian Contact: 25363652445
+Image: uploads/a2.png
